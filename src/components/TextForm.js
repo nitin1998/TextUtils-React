@@ -37,6 +37,13 @@ export default function TextForm(props) {
         setText('');
         props.showAlert('Text has been cleared', 'success');
     }
+
+    const handleExtraSpaces = () => {
+        // console.log("going to remove extra space from text")
+        let newText = text.split(/[ ]+/);
+        setText(newText.join(" "));
+        props.showAlert('Extra spaces has been removed', 'success');
+    }
     
     const [text, setText] = useState('');
     const [buttonText, setbuttonText] = useState('Convert To Uppercase');
@@ -51,6 +58,7 @@ export default function TextForm(props) {
         <button disabled={text.length === 0} className='btn btn-primary mx-2 my-1' onClick={handleOnClick}>{buttonText}</button>
         <button disabled={text.length === 0} className='btn btn-primary mx-2 my-1' onClick={handleCopyText}>Copy to clipboard</button>
         <button disabled={text.length === 0} className='btn btn-primary mx-2 my-1' onClick={handleClearText}>Clear Text</button>
+        <button disabled={text.length === 0} className='btn btn-primary mx-2 my-1' onClick={handleExtraSpaces}>Remove Extra Spaces</button>
     </div>
     <div className='container my-2'>
         <h3>Your Text Summary</h3>
