@@ -49,9 +49,9 @@ export default function TextForm(props) {
         <div className="mb-3">
             <textarea className="form-control" id="myBox" onChange={handleOnChange} rows="8" value={text}></textarea>
         </div>
-        <button className='btn btn-primary mx-2' onClick={handleOnClick}>{buttonText}</button>
-        <button className='btn btn-primary mx-2' onClick={handleCopyText}>Copy to clipboard</button>
-        <button className='btn btn-primary mx-2' onClick={handleClearText}>Clear Text</button>
+        <button className='btn btn-primary mx-2 my-1' onClick={handleOnClick}>{buttonText}</button>
+        <button className='btn btn-primary mx-2 my-1' onClick={handleCopyText}>Copy to clipboard</button>
+        <button className='btn btn-primary mx-2 my-1' onClick={handleClearText}>Clear Text</button>
     </div>
     <div className='container my-2'>
         <h3>Your Text Summary</h3>
