@@ -4,7 +4,6 @@ let flag = true;
 export default function TextForm(props) {
 
     let newText;
-    
 
     const handleOnClick = () => {
         // console.log("Entered Text : " + text);
@@ -49,9 +48,9 @@ export default function TextForm(props) {
         <div className="mb-3">
             <textarea className="form-control" id="myBox" onChange={handleOnChange} rows="8" value={text}></textarea>
         </div>
-        <button className='btn btn-primary mx-2 my-1' onClick={handleOnClick}>{buttonText}</button>
-        <button className='btn btn-primary mx-2 my-1' onClick={handleCopyText}>Copy to clipboard</button>
-        <button className='btn btn-primary mx-2 my-1' onClick={handleClearText}>Clear Text</button>
+        <button disabled={text.length === 0} className='btn btn-primary mx-2 my-1' onClick={handleOnClick}>{buttonText}</button>
+        <button disabled={text.length === 0} className='btn btn-primary mx-2 my-1' onClick={handleCopyText}>Copy to clipboard</button>
+        <button disabled={text.length === 0} className='btn btn-primary mx-2 my-1' onClick={handleClearText}>Clear Text</button>
     </div>
     <div className='container my-2'>
         <h3>Your Text Summary</h3>
